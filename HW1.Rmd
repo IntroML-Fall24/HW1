@@ -1,0 +1,60 @@
+---
+title: "HW 01"
+author: "Student Name"
+date: "Today's Date"
+output:
+  html_document:
+    theme: cerulean
+---
+
+Instructions:  Answer all questions in this `.Rmd` file.  Be sure to knit, commit and push the final versions of your `.Rmd` and `.html` files.
+
+```{r load-libraries, include = FALSE}
+library(MASS)
+library(tidyverse)
+
+```
+
+
+1.  Describe a real-life application in which classification might be useful.  Describe the response, as well as some possible predictors.  Is the goal inference or prediction?  Explain.
+
+2.  Describe a real-life application in which regression might be useful.  Describe the response, as well as possible predictor variables.  Is the goal inference or prediction?  Explain.
+
+3.  What are the advantages and disadvantages of a very flexible (versus a less flexible) approach for regression or classification?  Under what circumstances might a more flexible approach be preferred to a less flexible approach?  When might a less flexible approach be preferred?
+
+These next questions will review visualizing and summarizing data using R.  You should use functions from `tidyverse` to answer the questions.  If you need to use libraries other than `tidyverse`, add them to the `load-libraries` code chunk at the beginning of this assignment.
+
+4.  In question 4, you will be analyzing auto data, found in the data folder for the HW1 repository.
+
+(a) Use `read_csv` to read in the `Auto.csv` data.  Note that a "?" is used for some variables for missing values.  Be sure to add the option `na = ` to your `read_csv` function call.  Use `?read_csv` in your console if you need help.
+Make sure missing values have been removed from the data after reading it in.  Use the function `na.omit()`. Remember that you can type `?na.omit` in  your R console to view a help file for that function.
+
+(b) What are the dimensions of the dataset (how many rows and columns)? Do not use `view` in your R code to answer this question (recall that we should not use `view` in our `.Rmd` file since it displays the output in a new window, and the output will not be included when you knit).  Instead, use inline R code to answer the question in a complete sentence.
+
+(c) Which of the variables are categorical (that is, which have type chr or factor)?  Are there any categorical variables that should be treated as quantitative?  If so, use `as.double()` to convert the type of the variable to double.
+
+(d) Which of the variables are quantitative (that is, which have type double or integer after reading in the data)?  Are there any quantitative variables that perhaps should be treated as categorical?  If so, use the function `as.factor()` to convert the type of the variable to categorical.
+
+
+(e) Use the `summary()` function to generate summary statistics for all variables.  Next, use `tidyverse` functions to appropriately summarize each categorical variable (separately) using a frequency table.  State the top 5 most common values for each categorical variable.
+
+(f)  For the top 5 most common car names in the dataset, generate a table of summary statistics for the variable weight that includes the minimum, maximum, mean, and standard deviation.  You must use `tidyverse` functions to generate the table of summary statistics (by car name).
+
+(g)  Suppose we wish to predict gas mileage (`mpg`).  Investigate the relationship between other predictor variables in the dataset and gas mileage graphically.  Do your plots suggest that any of the other variables might be useful in predicting `mpg`?  Summarize your findings.  If a categorical variable has many levels, you might want to consider filtering in some way before plotting.
+
+5.  In this question you will be analyzing housing data collected by the U.S. Census Bureau near the Boston area.  The dataset is part of the `MASS` library (which you should already have loaded at the begining of this assignment).  The dataset is contained in the object called `Boston`.  Use `?Boston` to read about the dataset.  Each row in the dataset represents a Boston suburb.
+
+(a) Are any of the variables age, dis, tax, or ptratio associated with per capita crime rate? If so, describe the relationship. Create visualizations to support your answer.
+
+(b) How many suburbs in this dataset bound the Charles river?
+
+(c)  What is the median pupil-to-teacher ratio among the suburbs in this dataset?
+
+(d)  How many of the suburbs average more than seven rooms per dwelling?
+
+(e) Describe the distribution of crime rates for the Boston suburbs in this dataset.  Generate a suitable visualization(s) to support your answer, as well as summary statistics.
+
+(f)  Read the following [article](https://towardsdatascience.com/things-you-didnt-know-about-the-boston-housing-dataset-2e87a6f960e8) about the Boston housing dataset.
+Confirm the cap applied to the median value of homes in this dataset using one or more visualizations.
+
+
